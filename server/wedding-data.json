@@ -270,11 +270,9 @@
   "settings": {
     "onboarded": false,
     "photoPosition": "center 22%",
-    "onboardComplete": true,
-    "calendarConfirmed": true,
-    "priorities": [
-      "Tasks"
-    ],
+    "onboardComplete": false,
+    "calendarConfirmed": false,
+    "priorities": [],
     "brainDump": ""
   },
   "vision": [

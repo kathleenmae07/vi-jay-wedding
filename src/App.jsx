@@ -18,7 +18,7 @@ function App() {
   const { appData, isLoading, saveAppData } = useAppData()
 
   useEffect(() => {
-    if (!isLoading && appData) {
+    if (!isLoading && appData && appData.settings?.onboardComplete) {
       const splashTimer = setTimeout(() => setShowSplash(false), 2500)
       return () => clearTimeout(splashTimer)
     }
