@@ -1,0 +1,122 @@
+/* Wedding App Custom CSS */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Palette */
+  --burgundy: #5C1A2E;
+  --burgundy-light: #8B2A45;
+  --rust: #B85A1A;
+  --rust-light: #D4763A;
+  --blush: #E8A89C;
+  --blush-light: #F2C9C2;
+  --olive: #6B7A3A;
+  --cream: #FDF6F0;
+  --warm-white: #FFFAF6;
+  --text-dark: #2C1810;
+  --text-mid: #6B4A3A;
+  --text-light: #A07060;
+  
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--warm-white);
+}
+
+.mobile-app {
+  max-width: 430px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--warm-white);
+  position: relative;
+}
+
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.app-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.app-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.app-content::-webkit-scrollbar-thumb {
+  background: var(--blush);
+  border-radius: 3px;
+}
+
+.font-script { font-family: 'Pinyon Script', cursive; }
+.font-serif { font-family: 'Playfair Display', serif; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fadeIn { animation: fadeIn 0.3s ease-out; }
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Subtle disco-ball watermark across the app content */
+.app-content {
+  position: relative; /* ensure pseudo-element is positioned relative */
+}
+.app-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/disco-ball-watermark.svg');
+  background-repeat: repeat;
+  background-size: 180px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+  filter: grayscale(1);
+}
+
+/* Ensure screen content sits above watermark */
+.app-content > * {
+  position: relative;
+  z-index: 1;
+}

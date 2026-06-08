@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#8B2A45" />
+      <stop offset="100%" stop-color="#B85A1A" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" font-family="Playfair Display, serif" font-size="72" fill="#FFFAF6">Vi & Jay</text>
+  <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="36" fill="#F2C9C2">Wedding HQ</text>
+</svg>

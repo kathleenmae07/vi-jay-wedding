@@ -1,0 +1,330 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Book hair & makeup artist",
+      "category": "Beauty",
+      "status": "todo",
+      "month": "Jul",
+      "delegated": null
+    },
+    {
+      "id": 2,
+      "text": "Finalize honeymoon destination & dates",
+      "category": "Travel",
+      "status": "todo",
+      "month": "Jul",
+      "delegated": null
+    },
+    {
+      "id": 3,
+      "text": "Final dress fitting",
+      "category": "Attire",
+      "status": "todo",
+      "month": "Aug",
+      "delegated": null
+    },
+    {
+      "id": 4,
+      "text": "Confirm ribbon escort display vendor & colors",
+      "category": "Decor",
+      "status": "todo",
+      "month": "Aug",
+      "delegated": null
+    },
+    {
+      "id": 5,
+      "text": "Confirm wedding party attire",
+      "category": "Attire",
+      "status": "todo",
+      "month": "Aug",
+      "delegated": null
+    },
+    {
+      "id": 6,
+      "text": "Rehearsal dinner — guest list",
+      "category": "Rehearsal",
+      "status": "todo",
+      "month": "Aug",
+      "delegated": null
+    },
+    {
+      "id": 7,
+      "text": "Final headcount to venue",
+      "category": "Venue",
+      "status": "todo",
+      "month": "Sep",
+      "delegated": null
+    },
+    {
+      "id": 8,
+      "text": "Finalize menu with Crème de la Crème",
+      "category": "Food",
+      "status": "todo",
+      "month": "Sep",
+      "delegated": null
+    },
+    {
+      "id": 9,
+      "text": "Confirm ceremony music / DJ",
+      "category": "Music",
+      "status": "todo",
+      "month": "Sep",
+      "delegated": null
+    },
+    {
+      "id": 10,
+      "text": "Write vows ✍️",
+      "category": "Ceremony",
+      "status": "todo",
+      "month": "Sep",
+      "delegated": null
+    },
+    {
+      "id": 11,
+      "text": "Hair & makeup trial run",
+      "category": "Beauty",
+      "status": "todo",
+      "month": "Sep",
+      "delegated": null
+    },
+    {
+      "id": 12,
+      "text": "Send final payments to vendors",
+      "category": "Misc",
+      "status": "todo",
+      "month": "Sep",
+      "delegated": null
+    },
+    {
+      "id": 13,
+      "text": "Create seating chart",
+      "category": "Guests",
+      "status": "todo",
+      "month": "Sep",
+      "delegated": null
+    },
+    {
+      "id": 14,
+      "text": "Rehearsal dinner — confirm venue & details Oct 29",
+      "category": "Rehearsal",
+      "status": "todo",
+      "month": "Sep",
+      "delegated": null
+    },
+    {
+      "id": 15,
+      "text": "Confirm ALL vendor arrival times",
+      "category": "Venue",
+      "status": "todo",
+      "month": "Oct",
+      "delegated": null
+    },
+    {
+      "id": 16,
+      "text": "Deliver ribbon escort display materials",
+      "category": "Decor",
+      "status": "todo",
+      "month": "Oct",
+      "delegated": null
+    },
+    {
+      "id": 17,
+      "text": "Final dress pickup",
+      "category": "Attire",
+      "status": "todo",
+      "month": "Oct",
+      "delegated": null
+    },
+    {
+      "id": 18,
+      "text": "🎭 Oct 29 Thursday — Rehearsal dinner!",
+      "category": "Rehearsal",
+      "status": "todo",
+      "month": "Oct",
+      "delegated": null
+    },
+    {
+      "id": 19,
+      "text": "Send final invitations",
+      "category": "Guests",
+      "status": "todo",
+      "month": "Jun",
+      "delegated": null
+    }
+  ],
+  "vendors": [
+    {
+      "id": 1,
+      "name": "Crème de la Crème",
+      "role": "Venue",
+      "status": "confirmed",
+      "contact": "",
+      "notes": "727 Young St, Youngsville LA 70592",
+      "photos": []
+    },
+    {
+      "id": 2,
+      "name": "TBD",
+      "role": "Photographer",
+      "status": "todo",
+      "contact": "",
+      "notes": "",
+      "photos": []
+    },
+    {
+      "id": 3,
+      "name": "TBD",
+      "role": "Florist",
+      "status": "todo",
+      "contact": "",
+      "notes": "Ribbon: orange, teal, fuchsia, blush, rust, olive",
+      "photos": []
+    },
+    {
+      "id": 4,
+      "name": "TBD",
+      "role": "Hair & Makeup",
+      "status": "doing",
+      "contact": "",
+      "notes": "",
+      "photos": []
+    },
+    {
+      "id": 5,
+      "name": "TBD",
+      "role": "DJ / Music",
+      "status": "todo",
+      "contact": "",
+      "notes": "",
+      "photos": []
+    }
+  ],
+  "budget": [
+    {
+      "id": 1,
+      "category": "Venue",
+      "budget": 8000,
+      "spent": 0,
+      "receipts": []
+    },
+    {
+      "id": 2,
+      "category": "Catering",
+      "budget": 6000,
+      "spent": 0,
+      "receipts": []
+    },
+    {
+      "id": 3,
+      "category": "Photography",
+      "budget": 3500,
+      "spent": 0,
+      "receipts": []
+    },
+    {
+      "id": 4,
+      "category": "Florals & Decor",
+      "budget": 2500,
+      "spent": 0,
+      "receipts": []
+    },
+    {
+      "id": 5,
+      "category": "Attire",
+      "budget": 2000,
+      "spent": 0,
+      "receipts": []
+    },
+    {
+      "id": 6,
+      "category": "Music / DJ",
+      "budget": 1500,
+      "spent": 0,
+      "receipts": []
+    },
+    {
+      "id": 7,
+      "category": "Hair & Makeup",
+      "budget": 800,
+      "spent": 0,
+      "receipts": []
+    },
+    {
+      "id": 8,
+      "category": "Rehearsal Dinner",
+      "budget": 2000,
+      "spent": 0,
+      "receipts": []
+    },
+    {
+      "id": 9,
+      "category": "Misc",
+      "budget": 1000,
+      "spent": 0,
+      "receipts": []
+    }
+  ],
+  "brainDump": "",
+  "chatMessages": [],
+  "settings": {
+    "onboarded": false,
+    "photoPosition": "center 22%",
+    "onboardComplete": true,
+    "calendarConfirmed": true,
+    "priorities": [
+      "Tasks"
+    ],
+    "brainDump": ""
+  },
+  "vision": [
+    {
+      "id": "vision-preload-1",
+      "title": "Wedding Invitation",
+      "category": "Decor",
+      "status": "confirmed",
+      "publicImage": "/public/Vision/invitation-front.png",
+      "imageKey": null,
+      "assetKey": null,
+      "link": "https://canva.link/p4sf0c7glrd38tz",
+      "note": "Front of invitation",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "vision-preload-2",
+      "title": "Invitation Envelope",
+      "category": "Decor",
+      "status": "confirmed",
+      "publicImage": "/public/Vision/invitation-envelope.png",
+      "imageKey": null,
+      "assetKey": null,
+      "link": "",
+      "note": "",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "vision-preload-3",
+      "title": "Wedding Menu Card",
+      "category": "Food",
+      "status": "confirmed",
+      "publicImage": "/public/Vision/menu.png",
+      "imageKey": null,
+      "assetKey": null,
+      "link": "",
+      "note": "",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "vision-preload-4",
+      "title": "Table Sign No. 1",
+      "category": "Decor",
+      "status": "confirmed",
+      "publicImage": "/public/Vision/tablesign1.png",
+      "imageKey": null,
+      "assetKey": null,
+      "link": "",
+      "note": "",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ]
+}
