@@ -4,7 +4,6 @@ const BrainDumpScreen = ({ appData, saveAppData }) => {
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-  const [noteInput, setNoteInput] = useState(appData.brainDump || '')
 
   const handleSendMessage = async () => {
     if (!input.trim()) return
@@ -44,10 +43,6 @@ const BrainDumpScreen = ({ appData, saveAppData }) => {
     } finally {
       setLoading(false)
     }
-  }
-
-  const handleSaveNotes = () => {
-    saveAppData({ ...appData, brainDump: noteInput })
   }
 
   return (
@@ -117,26 +112,6 @@ const BrainDumpScreen = ({ appData, saveAppData }) => {
         </div>
       </div>
 
-      {/* My Notes Section */}
-      <div className="border-t border-blush-light bg-blush-light bg-opacity-10 p-4">
-        <div className="space-y-2 max-h-40 overflow-y-auto">
-          <label className="block">
-            <p className="font-serif text-sm text-burgundy mb-2">📝 My Notes</p>
-            <textarea
-              value={noteInput}
-              onChange={(e) => setNoteInput(e.target.value)}
-              placeholder="Your personal notes and ideas..."
-              className="w-full h-24 p-3 border border-blush rounded-lg text-xs focus:outline-none focus:border-burgundy resize-none"
-            />
-          </label>
-          <button
-            onClick={handleSaveNotes}
-            className="w-full px-3 py-2 bg-olive text-white rounded-lg text-xs font-serif hover:bg-opacity-90 transition-colors"
-          >
-            Save Notes
-          </button>
-        </div>
-      </div>
     </div>
   )
 }

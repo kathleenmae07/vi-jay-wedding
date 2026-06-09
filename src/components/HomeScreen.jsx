@@ -139,17 +139,6 @@ const HomeScreen = ({ appData, saveAppData }) => {
           </div>
         )}
 
-        {/* Brain Dump */}
-        <div className="space-y-2">
-          <h3 className="font-serif text-lg text-burgundy">Brain Dump 🧠</h3>
-          <textarea
-            defaultValue={appData.brain_dump}
-            onChange={(e) => handleBrainDumpSave(e.target.value)}
-            placeholder="Jot down anything... colors, ideas, reminders!"
-            className="w-full h-24 p-3 border-2 border-blush rounded-lg font-serif text-sm text-text-mid focus:outline-none focus:border-burgundy resize-none"
-          />
-        </div>
-
         {/* Vi's Wins */}
         <div className="bg-olive bg-opacity-10 rounded-2xl p-6 text-center">
           <h3 className="font-serif text-lg text-olive mb-2">✨ Vi's Wins</h3>

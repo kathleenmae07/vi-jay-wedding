@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 const MoreScreen = ({ appData, saveAppData }) => {
   const [tab, setTab] = useState('budget')
+  const [newCategory, setNewCategory] = useState('')
   const [photoFile, setPhotoFile] = useState(null)
   const [logoFile, setLogoFile] = useState(null)
   const [photoPosition, setPhotoPosition] = useState(appData.settings?.photoPosition || 'center')
@@ -58,6 +59,20 @@ const MoreScreen = ({ appData, saveAppData }) => {
       b.id === id ? { ...b, [field]: Number(value) } : b
     )
     saveAppData({ ...appData, budget: updatedBudget })
+  }
+
+  const handleAddCategory = () => {
+    const name = newCategory.trim()
+    if (!name) return
+    const maxId = appData.budget.reduce((m, b) => Math.max(m, b.id || 0), 0)
+    const newItem = { id: maxId + 1, category: name, budget: 0, spent: 0, receipts: [] }
+    saveAppData({ ...appData, budget: [...appData.budget, newItem] })
+    setNewCategory('')
+  }
+
+  const handleRemoveCategory = (id) => {
+    if (!window.confirm('Remove this budget category?')) return
+    saveAppData({ ...appData, budget: appData.budget.filter(b => b.id !== id) })
   }
 
   const fileUrl = (key) => (key ? `/api/file/${encodeURIComponent(key)}?ts=${Date.now()}` : null)
@@ -143,6 +158,25 @@ const MoreScreen = ({ appData, saveAppData }) => {
               </div>
             </div>
 
+            {/* Add Category */}
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={newCategory}
+                onChange={(e) => setNewCategory(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleAddCategory()}
+                placeholder="New category name..."
+                className="flex-1 px-3 py-2 border border-blush rounded-lg text-xs focus:outline-none focus:border-burgundy"
+              />
+              <button
+                onClick={handleAddCategory}
+                disabled={!newCategory.trim()}
+                className="px-4 py-2 bg-burgundy text-white rounded-lg text-xs font-serif hover:bg-burgundy/90 transition-colors disabled:opacity-40"
+              >
+                + Add
+              </button>
+            </div>
+
             {/* Budget Items */}
             <div className="space-y-4">
               {appData.budget.map(item => {
@@ -151,7 +185,16 @@ const MoreScreen = ({ appData, saveAppData }) => {
 
                 return (
                   <div key={item.id} className="bg-white border border-blush-light rounded-xl p-4 space-y-2">
-                    <p className="font-serif text-sm text-text-mid font-bold">{item.category}</p>
+                    <div className="flex items-center justify-between">
+                      <p className="font-serif text-sm text-text-mid font-bold">{item.category}</p>
+                      <button
+                        onClick={() => handleRemoveCategory(item.id)}
+                        className="text-xs text-rust hover:text-rust/70 transition-colors"
+                        title="Remove category"
+                      >
+                        ✕ Remove
+                      </button>
+                    </div>
                     
                     {/* Progress Bar */}
                     <div className="space-y-1">
@@ -169,20 +212,26 @@ const MoreScreen = ({ appData, saveAppData }) => {
 
                     {/* Inputs */}
                     <div className="grid grid-cols-2 gap-2 mt-3">
-                      <input
-                        type="number"
-                        value={item.budget}
-                        onChange={(e) => handleBudgetChange(item.id, 'budget', e.target.value)}
-                        placeholder="Budget"
-                        className="px-3 py-2 border border-blush rounded-lg text-xs focus:outline-none focus:border-burgundy"
-                      />
-                      <input
-                        type="number"
-                        value={item.spent}
-                        onChange={(e) => handleBudgetChange(item.id, 'spent', e.target.value)}
-                        placeholder="Spent"
-                        className="px-3 py-2 border border-blush rounded-lg text-xs focus:outline-none focus:border-burgundy"
-                      />
+                      <div className="flex flex-col gap-1">
+                        <label className="text-xs text-text-light font-serif pl-1">Budget</label>
+                        <input
+                          type="number"
+                          value={item.budget}
+                          onChange={(e) => handleBudgetChange(item.id, 'budget', e.target.value)}
+                          placeholder="0"
+                          className="px-3 py-2 border border-blush rounded-lg text-xs focus:outline-none focus:border-burgundy"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        <label className="text-xs text-text-light font-serif pl-1">Spent</label>
+                        <input
+                          type="number"
+                          value={item.spent}
+                          onChange={(e) => handleBudgetChange(item.id, 'spent', e.target.value)}
+                          placeholder="0"
+                          className="px-3 py-2 border border-blush rounded-lg text-xs focus:outline-none focus:border-burgundy"
+                        />
+                      </div>
                     </div>
                     <div className="mt-3 flex items-center gap-3">
                       <label className="inline-flex items-center gap-2 rounded-2xl border border-dashed border-blush-light bg-blush-light/30 px-3 py-2 text-xs text-text-mid cursor-pointer hover:border-burgundy">
